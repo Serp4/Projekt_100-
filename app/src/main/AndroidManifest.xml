@@ -18,7 +18,8 @@
         <activity
             android:name=".GRA.GraActivity"
             android:label="@string/title_activity_gra"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GRA.DialogActivity"></activity>
     </application>
 
 </manifest>

@@ -5,79 +5,26 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tlo_1_1"
+    android:background="@drawable/tlo_fragmenty_2"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bartek.projekt2016.GRA.GraActivity">
 
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <Button
-                android:id="@+id/fragment_odp_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_shape"
-                android:textColor="#FFFF"
-                android:textSize="20dp" />
-
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="0dp" />
-
-            <Button
-                android:id="@+id/fragment_odp_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_shape"
-                android:textColor="#FFFF"
-                android:textSize="20dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <Button
-                android:id="@+id/fragment_odp_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_shape"
-                android:textColor="#FFFF"
-                android:textSize="20dp" />
-
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="0dp" />
-
-            <Button
-                android:id="@+id/fragment_odp_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_shape"
-                android:textColor="#FFFF"
-                android:textSize="20dp" />
-        </LinearLayout>
-    </LinearLayout>
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/button_viev"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:columnWidth="65dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+     ></GridView>
 
 
 

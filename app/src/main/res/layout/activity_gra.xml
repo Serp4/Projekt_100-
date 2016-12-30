@@ -6,21 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@drawable/tlo_fragmenty"
     tools:context="com.example.bartek.projekt2016.GRA.GraActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/appbar_padding_top"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
@@ -34,24 +21,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/edit"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/gridview"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:background="@drawable/key_shapce_inverter"
+                android:textSize="28dp"
+                android:textColor="#2f63ca"/>
+        <Button
+            android:layout_width="50dp"
+            android:text="OK"
+            android:layout_toRightOf="@+id/edit"
             android:layout_above="@+id/gridview"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-            android:background="@drawable/key_shape"
-            android:textSize="28dp"
-            android:textColor="#FFFFFF"/>
+            android:layout_gravity="center"
+            android:id="@+id/ok"
+            android:background="@drawable/key_shapce_inverter"
+            android:textColor="#2f63ca"
+            android:layout_height="40dp"
+            />
+
 
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/gridview"
             android:layout_width="match_parent"
-            android:layout_height="195dp"
+            android:layout_height="200dp"
             android:layout_alignParentBottom="true"
-            android:columnWidth="90dp"
+            android:columnWidth="20dp"
+            android:gravity="center"
+            android:padding="1dp"
+            android:horizontalSpacing="2dp"
+            android:verticalSpacing="2dp"
             android:numColumns="10"
+            android:scrollbars="none"
+            android:background="#FFFFFF"
             android:stretchMode="columnWidth"></GridView>
 
     </RelativeLayout>
