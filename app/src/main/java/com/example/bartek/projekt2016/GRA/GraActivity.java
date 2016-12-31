@@ -2,14 +2,14 @@ package com.example.bartek.projekt2016.GRA;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.text.InputType;
@@ -19,7 +19,6 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
-
 import com.example.bartek.projekt2016.GRA.Pleaceholder.Placeholderfragment_1;
 import com.example.bartek.projekt2016.GRA.Pleaceholder.Placeholderfragment_2;
 import com.example.bartek.projekt2016.R;
@@ -28,7 +27,7 @@ import java.util.ArrayList;
 
 public class GraActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private SectionsPagerAdapter sectionsPagerAdapter;
     private ViewPager mViewPager;
     private EditText editText;
     private ArrayList<Button> gridlista;
@@ -47,34 +46,19 @@ public class GraActivity extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridview);
         setbutton(gridlista);
         gridView.setAdapter(new GridAdapter(gridlista));
-        setDialog();
+        Intent intent=getIntent();
+        number= intent.getIntExtra("number",1);
+
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(sectionsPagerAdapter);;
+
+
+
     }
 
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return Placeholderfragment_1.newInstance(position,number);
-                case 1:
-                    return Placeholderfragment_2.newInstance(position,number);
-                default:
-                    return null;
-            }
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 2;
-        }
-    }
 
     public void setbutton(ArrayList<Button> mButtons) {
         editText.setInputType(InputType.TYPE_NULL);
@@ -157,33 +141,30 @@ public class GraActivity extends AppCompatActivity {
 
     }
 
-    public void  setDialog()
-    {
-        final AlertDialog alert;
-        final CharSequence[] items = {"Pytanie nr 1", "Pytanie nr 2", "Pytanie nr 3"};
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Wybierz numer pytania");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-                //TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-               // tabLayout.setupWithViewPager(mViewPager);
-                mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-                mViewPager = (ViewPager) findViewById(R.id.container);
-                mViewPager.setAdapter(mSectionsPagerAdapter);
-            }
-        });
-        builder.setCancelable(false);
-        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int item) {
 
-                Toast.makeText(context,items[item],Toast.LENGTH_LONG);
-                number=item;
-            }
-        });
-        alert = builder.create();
-        alert.show();
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return Placeholderfragment_1.newInstance(position,number);
+                case 1:
+                    return Placeholderfragment_2.newInstance(position,number);
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 2;
+        }
     }
 }

@@ -66,16 +66,16 @@ public class Baza {
         return Zestaw;
     }
 
+
     public void setZestaw(ArrayList<Baza> zestaw) {
         Zestaw = zestaw;
     }
 
-    public Baza()
-    {
+    public Baza() {
         getBaza();
     }
 
-    public Baza(String pytanie,int odp,String odp_1,String odp_2,String odp_3) {
+    public Baza(String pytanie, int odp, String odp_1, String odp_2, String odp_3) {
 
         setOdp_1(odp_1);
         setOdp_2(odp_2);
@@ -84,7 +84,8 @@ public class Baza {
         setPytanie(pytanie);
 
     }
-    public Baza(String pytanie,int odp,String odp_1,String odp_2,String odp_3,String odp_4) {
+
+    public Baza(String pytanie, int odp, String odp_1, String odp_2, String odp_3, String odp_4) {
 
         setOdp_1(odp_1);
         setOdp_2(odp_2);
@@ -94,11 +95,10 @@ public class Baza {
         setPytanie(pytanie);
     }
 
-    public  void getBaza()
-    {
-        Baza n1=new Baza("Co monżna znaleźć pod maską samochodu ?",3,"silnik","akumulator","chłodnice");
-        Baza n2=new Baza("Urządzenie posiadające głośnik ?",4,"radio","telefon","telewizor","laptop");
-        Baza n3=new Baza("Czerwone warzywo",3,"papryka","burak","rzodkiewka");
+    public void getBaza() {
+        Baza n1 = new Baza("Co monżna znaleźć pod maską samochodu ?", 3, "silnik", "akumulator", "chłodnice");
+        Baza n2 = new Baza("Urządzenie posiadające głośnik ?", 4, "radio", "telefon", "telewizor", "laptop");
+        Baza n3 = new Baza("Czerwone warzywo", 3, "papryka", "burak", "rzodkiewka");
 
         Zestaw = new ArrayList<Baza>();
         Zestaw.add(n1);

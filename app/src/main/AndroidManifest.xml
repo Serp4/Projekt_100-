@@ -19,7 +19,8 @@
             android:name=".GRA.GraActivity"
             android:label="@string/title_activity_gra"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GRA.DialogActivity"></activity>
+        <activity android:name=".GRA.DialogActivity" />
+        <activity android:name=".GRA.Zestaw"></activity>
     </application>
 
 </manifest>

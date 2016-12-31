@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.bartek.projekt2016.GRA.GraActivity;
+import com.example.bartek.projekt2016.GRA.Zestaw;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void on_graj(View v) {
-        Intent intent = new Intent(this, GraActivity.class);
+        Intent intent = new Intent(this, Zestaw.class);
         startActivity(intent);
     }
 
