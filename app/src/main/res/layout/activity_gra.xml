@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/tlo_fragmenty"
+    android:background="@drawable/tlo"
     tools:context="com.example.bartek.projekt2016.GRA.GraActivity">
 
     <android.support.v4.view.ViewPager
@@ -22,6 +22,17 @@
         android:layout_height="match_parent">
 
 
+        <TextView
+            android:text="100"
+            android:textColor="#2ca905"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_above="@+id/gridview"
+            android:background="@drawable/key_shapce_inv"
+            android:id="@+id/points"
+            android:fontFamily="serif-monospace"
+            android:textStyle="normal|bold" />
             <EditText
                 android:id="@+id/edit"
                 android:layout_width="200dp"
@@ -29,17 +40,17 @@
                 android:layout_above="@+id/gridview"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
-                android:background="@drawable/key_shapce_inverter"
+                android:background="@drawable/key_shapce_inv"
                 android:textSize="28dp"
                 android:textColor="#2f63ca"/>
         <Button
             android:layout_width="50dp"
             android:text="OK"
-            android:layout_toRightOf="@+id/edit"
+            android:layout_alignParentRight="true"
             android:layout_above="@+id/gridview"
             android:layout_gravity="center"
             android:id="@+id/ok"
-            android:background="@drawable/key_shapce_inverter"
+            android:background="@drawable/key_shapce_inv"
             android:textColor="#2f63ca"
             android:layout_height="40dp"
             />
@@ -58,7 +69,9 @@
             android:numColumns="10"
             android:scrollbars="none"
             android:background="#FFFFFF"
-            android:stretchMode="columnWidth"></GridView>
+            android:stretchMode="columnWidth"/>
+
+
 
     </RelativeLayout>
 

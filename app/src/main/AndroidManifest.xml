@@ -19,8 +19,9 @@
             android:name=".GRA.GraActivity"
             android:label="@string/title_activity_gra"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GRA.DialogActivity" />
-        <activity android:name=".GRA.Zestaw"></activity>
+        <activity android:name=".GRA.Zestaw" />
+        <activity android:name=".InstrukcjaActivity" />
+        <activity android:name=".Punkty.ZbierajActivity"></activity>
     </application>
 
 </manifest>

@@ -3,11 +3,29 @@
     <string name="graj">GRAJ</string>
     <string name="zbieraj">ZBIERAJ</string>
     <string name="instrukcja">INSTRUKCJA</string>
-    <string name="o_tworcy">O TWORCY</string>
+    <string name="zamknij">ZAMKNIJ</string>
     <string name="tytul">100%\nALBO NIC!</string>>
     <string name="tytul_tworca">BARTOSZ KUSIAK\nEiT 155595</string>
     <string name="title_activity_gra">GraActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="CODE">AUTHENTICATION</string>
+    <string name="NUMBER">NUMBER</string>
+    <string name="POINTS">POINTS</string>
+    <string name="EXIT">Kliknij jeszcze raz jezeli chcesz wyjść z gry</string>
+    <string name="Instrukcja">Instrukcja gry 100% albo nic!\n\n
+
+        Przy pierwszym uruchomieniu aplikacji dostępne jest tylko 1 pytanie oraz \n 100 punktów podpowiedzi.
+
+        Zaliczenie każdego pytania pozwala przejść do kolejnego.\n
+
+        Każdorazowe poprawne podanie podowiedzi jest punktowane +20 puntków podowiedzi.\n
+
+        W razie ewentualnych problemów istnieje możliwość skorzystania podpowiedzi poprzez naciśnięcie \
+
+        danego pola,każda litera jest warta 10 punktów podpowiedzi.\n\n
+
+        POWODZENIA =) </string>
+    <string name="FOTO">FOTO</string>
 
 </resources>
