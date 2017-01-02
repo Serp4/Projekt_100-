@@ -72,26 +72,26 @@ public class Placeholderfragment_2 extends Fragment {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View answer = inflater.inflate(R.layout.fragment_odpowiedzi, container, false);
-        final Button button = (Button) getActivity().findViewById(R.id.ok);
+        final Button ok = (Button) getActivity().findViewById(R.id.ok);
         context = (Context) getActivity();
         intent = new Intent(getActivity(), Zestaw.class);
         gridView_buttom = (GridView) answer.findViewById(R.id.button_viev);
         pager = (ViewPager) getActivity().findViewById(R.id.container);
         editText = (EditText) getActivity().findViewById(R.id.edit);
-        pointsView=(TextView) getActivity().findViewById(R.id.points);
+        pointsView = (TextView) getActivity().findViewById(R.id.points);
         number = getArguments().getInt("number");
 
         preferences = context.getSharedPreferences(getString(R.string.CODE), Context.MODE_PRIVATE);
         editor = preferences.edit();
         points = preferences.getInt(getString(R.string.POINTS), 100);
-        pointsView.setText(""+points);
+        pointsView.setText("" + points);
 
         Baza baza = new Baza();
         buttons_view = new ArrayList<Button>();
         zestaw = baza.getZestaw().get(number);
         setViewResponse(buttons_view, zestaw);
         gridView_buttom.setAdapter(new GridAdapter(buttons_view));
-        button.setOnClickListener(new View.OnClickListener() {
+        ok.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -149,37 +149,35 @@ public class Placeholderfragment_2 extends Fragment {
         char[] char_force = force.toCharArray();
         String displayWord = "";
         if (points >= 10) {
-            points =points-10;
-            pointsView.setText(""+points);
+            points = points - 10;
+            pointsView.setText("" + points);
             if (ok.length() < force.length()) {
                 for (int i = 0; i < force.length(); i++) {
                     if (i <= ok.length()) {
                         displayWord = displayWord + String.valueOf(char_force[i]);
-                    }
-                    else {
+                    } else {
                         displayWord = displayWord + "_ ";
                     }
                 }
-                    final Toast finalToast = Toast.makeText(getActivity(), "SORRY -10 points =( ", Toast.LENGTH_SHORT);
-                    new CountDownTimer(800, 100) {
-                        public void onTick(long millisUntilFinished) {
-                            finalToast.show();
-                        }
+                final Toast finalToast = Toast.makeText(getActivity(), "SORRY -10 points =( ", Toast.LENGTH_SHORT);
+                new CountDownTimer(800, 100) {
+                    public void onTick(long millisUntilFinished) {
+                        finalToast.show();
+                    }
 
-                        public void onFinish() {
-                            finalToast.cancel();
-                        }
-                    }.start();
+                    public void onFinish() {
+                        finalToast.cancel();
+                    }
+                }.start();
             }
             mbutton.setText(displayWord);
-        }
-        else {
+        } else {
             Toast.makeText(getActivity(), "Masz za mało punktów =(", Toast.LENGTH_SHORT).show();
         }
 
         if (displayWord.length() == force.length()) {
-            points=points+20;
-            pointsView.setText(""+points);
+            points = points + 20;
+            pointsView.setText("" + points);
             final Toast finalToast = Toast.makeText(getActivity(), "Gratulacje !\n   +20 points =)", Toast.LENGTH_SHORT);
             new CountDownTimer(2000, 1000) {
                 public void onTick(long millisUntilFinished) {
@@ -196,6 +194,7 @@ public class Placeholderfragment_2 extends Fragment {
             }.start();
             mbutton.setEnabled(false);
         }
+
     }
 
     public void showToast(String value) {
@@ -214,16 +213,16 @@ public class Placeholderfragment_2 extends Fragment {
     public void delay(final Button button, final String getzestaw, String text_1) {
 
         final String win = "   Gratulacje !\n   +20 points =)";
-        final String done="To hasło już odgadnięto !";
+        final String done = "To hasło już odgadnięto !";
 
         if (text_1.equalsIgnoreCase(getzestaw) == true) {
 
-            if(button.isEnabled()){
+            if (button.isEnabled()) {
                 button.setEnabled(false);
                 editText.setText("");
                 showToast(win);
-                points=points+20;
-                pointsView.setText(""+points);
+                points = points + 20;
+                pointsView.setText("" + points);
                 new CountDownTimer(2500, 1000) {
                     @Override
                     public void onTick(long l) {
@@ -241,12 +240,14 @@ public class Placeholderfragment_2 extends Fragment {
                         pager.setCurrentItem(0, true);
                     }
                 }.start();
-            }
-            else {
+            } else {
                 showToast(done);
                 editText.setText("");
             }
-            }
+        } else {
+            showToast("To hasło jest nieprawidłe =(");
+            editText.setText("");
+        }
 
     }
 
