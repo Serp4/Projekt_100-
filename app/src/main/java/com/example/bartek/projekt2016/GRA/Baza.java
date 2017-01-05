@@ -3,8 +3,12 @@ package com.example.bartek.projekt2016.GRA;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa odpowiadająca za treść pytań jak i ich możlowe odpowiedzi
+ */
 
 public class Baza {
+
 
     private String Pytanie;
     private String Odp_1;
@@ -15,16 +19,17 @@ public class Baza {
     private int Odp;
     private ArrayList<Baza> Zestaw;
 
-    public ArrayList<Baza> getZestaw() {
-        return Zestaw;
-    }
-
+    /**
+     * Konstruktor do wywołania w klasie @param Placeholderfragment_1 @param Placeholderfragment_2
+     */
     public Baza() {
         getBaza();
     }
 
+    /**
+     * Konstruktor przeciążony z 5 argumentami
+     */
     public Baza(String pytanie, int odp, String odp_1, String odp_2, String odp_3) {
-
         setOdp_1(odp_1);
         setOdp_2(odp_2);
         setOdp_3(odp_3);
@@ -33,8 +38,10 @@ public class Baza {
 
     }
 
+    /**
+     * Konstruktor przeciążony z 6 argumentami
+     */
     public Baza(String pytanie, int odp, String odp_1, String odp_2, String odp_3, String odp_4) {
-
         setOdp_1(odp_1);
         setOdp_2(odp_2);
         setOdp_3(odp_3);
@@ -43,6 +50,9 @@ public class Baza {
         setPytanie(pytanie);
     }
 
+    /**
+     * Metoda zwracająca elementy bazy
+     */
     public void getBaza() {
         Baza n1 = new Baza("Gazy szlachetne", 4, "Argon", "Ksenon", "Hel", "Neon");
         Baza n2 = new Baza("3 największe państwa świata", 3, "Rosja", "Kanada", "Chiny");
@@ -115,6 +125,10 @@ public class Baza {
 
     public void setOdp(int odp) {
         Odp = odp;
+    }
+
+    public ArrayList<Baza> getZestaw() {
+        return Zestaw;
     }
 
 }

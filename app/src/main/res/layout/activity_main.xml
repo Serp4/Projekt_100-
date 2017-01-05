@@ -25,27 +25,26 @@
         android:id="@+id/b_graj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/b_zbieraj"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/button_shape"
         android:onClick="on_graj"
         android:text="@string/graj"
         android:textColor="#FFFF"
-        android:layout_above="@+id/b_zbieraj"
-        android:layout_centerHorizontal="true"
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/b_zbieraj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/b_instrukcja"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:background="@drawable/button_shape"
         android:onClick="on_zbieraj"
         android:text="@string/zbieraj"
-        android:layout_above="@+id/b_instrukcja"
-        android:layout_centerHorizontal="true"
         android:textColor="#FFFF"
-        android:textSize="20dp"
-        android:layout_margin="10dp"
-        />
+        android:textSize="20dp" />
 
 
     <Button
@@ -58,8 +57,7 @@
         android:onClick="on_instrukcja"
         android:text="@string/instrukcja"
         android:textColor="#FFFF"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
 
 
 </RelativeLayout>

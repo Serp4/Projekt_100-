@@ -15,7 +15,11 @@ import com.example.bartek.projekt2016.R;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa odpowiedzialna za dostępność pytań do zrealizowania na danym etapie
+ */
 public class Zestaw extends AppCompatActivity {
+
 
     private ArrayList<Button> zestaw_view;
     private GridView gridView_zestaw;
@@ -23,6 +27,9 @@ public class Zestaw extends AppCompatActivity {
     private Intent intent;
     private int get;
 
+    /**
+     * Tworzy widok aktywności do wyboru pytania
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +50,9 @@ public class Zestaw extends AppCompatActivity {
         intent = new Intent(this, GraActivity.class);
     }
 
+    /**
+     * Ustawia funkcjonalność buttonów i zwraca je do listy obiektów
+     */
     public void setViewResponse(ArrayList<Button> mButtons) {
 
         Button cb = null;
@@ -65,6 +75,9 @@ public class Zestaw extends AppCompatActivity {
         }
     }
 
+    /**
+     * Ustawia dostępność pytań w widoku aktywności
+     */
     public void setViewResponse(ArrayList<Button> mButtons, int zestaw) {
 
         for (int i = baza.getZestaw().size(); i > zestaw; i--) {
@@ -76,6 +89,9 @@ public class Zestaw extends AppCompatActivity {
         }
     }
 
+    /**
+     * Metoda odpowiedzialna za naciścienie w telefonie przyciku wróc oraz uruchomieniu nowej aktywności
+     */
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);

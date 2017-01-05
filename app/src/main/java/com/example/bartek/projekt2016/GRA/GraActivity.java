@@ -23,6 +23,9 @@ import com.example.bartek.projekt2016.R;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa odpowiedzialna za budowe klawiatury i oraz zarządzanie fragmentami oraz ich aktywnościami
+ */
 public class GraActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter sectionsPagerAdapter;
@@ -34,6 +37,9 @@ public class GraActivity extends AppCompatActivity {
     private int number;
 
 
+    /**
+     * Tworzenie widoku aktywności
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +59,18 @@ public class GraActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metoda odpowiedzialna za naciścienie w telefonie przyciku wróc oraz uruchomieniu nowej aktywności
+     */
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(this, Zestaw.class);
         startActivity(intent);
     }
 
-
+    /**
+     * Ustawia funkcjonalność klawiszy klawiatury i zwraca je do listy obiektów
+     */
     public void setbutton(ArrayList<Button> mButtons) {
         editText.setInputType(InputType.TYPE_NULL);
         String klawisze = "0123456789qwertyuiopasdfghjkl  zxcvbnm ";
@@ -136,14 +147,21 @@ public class GraActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Klasa dziedzicząca po FragmentPageAdapeter odpowiada za zarządzanie i tworzeniem fragmentów
+     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        /**
+         * Konstruktor klasy @param SactionPagerAdaper
+         */
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
-
+        /**
+         * Zwraca numer fragmentu w jakim sie znajdujemy i uruchamia instancje jego widoku
+         */
         @Override
         public Fragment getItem(int position) {
             switch (position) {
@@ -156,9 +174,12 @@ public class GraActivity extends AppCompatActivity {
             }
         }
 
+        /**
+         * Zwraca ilość fragmentów
+         */
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 2 total pages.
             return 2;
         }
     }

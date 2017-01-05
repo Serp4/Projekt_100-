@@ -12,7 +12,6 @@
     tools:context="com.example.bartek.projekt2016.GRA.GraActivity">
 
 
-
     <TextView
         android:id="@+id/pytanie_id"
         android:layout_width="wrap_content"
