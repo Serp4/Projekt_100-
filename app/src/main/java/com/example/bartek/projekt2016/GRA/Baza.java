@@ -1,6 +1,10 @@
 package com.example.bartek.projekt2016.GRA;
 
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -15,8 +19,8 @@ public class Baza {
     private String Odp_2;
     private String Odp_3;
     private String Odp_4;
-
     private int Odp;
+
     private ArrayList<Baza> Zestaw;
 
     /**
@@ -129,6 +133,34 @@ public class Baza {
 
     public ArrayList<Baza> getZestaw() {
         return Zestaw;
+    }
+
+    /**
+     * Funkcja przygotowywująca na korzystanie aplikacji z bazy danej
+     */
+    public void database() {
+        Baza baza;
+        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase("Baza", null);
+        Cursor cursor = database.rawQuery("SELECT FROM Zestaw", null);
+        cursor.moveToFirst();
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.move(i);
+            String pytanie = cursor.getString(cursor.getColumnIndex("Pytanie"));
+            int liczba = Integer.getInteger(cursor.getString(cursor.getColumnIndex("Liczba")));
+            String odp_1 = cursor.getString(cursor.getColumnIndex("Odpowiedz1"));
+            String odp_2 = cursor.getString(cursor.getColumnIndex("Odpowiedz2"));
+            String odp_3 = cursor.getString(cursor.getColumnIndex("Odpowiedz3"));
+            String odp_4 = cursor.getString(cursor.getColumnIndex("Odpowiedz4"));
+
+            if (liczba == 3) {
+                baza = new Baza(pytanie, liczba, odp_1, odp_2, odp_3);
+            } else {
+                baza = new Baza(pytanie, liczba, odp_1, odp_2, odp_3, odp_4);
+            }
+
+            Zestaw = new ArrayList<Baza>();
+            Zestaw.add(baza);
+        }
     }
 
 }

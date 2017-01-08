@@ -143,9 +143,9 @@ public class Placeholderfragment_2 extends Fragment {
                     }
                 } else {
                     showToast("To hasło jest nieprawidłowe");
-                    editText.setText("");
-                }
-                checkWin(buttons_view);
+                editText.setText("");
+            }
+            checkWin(buttons_view);
             }
         });
         return answer;

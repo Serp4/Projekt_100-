@@ -74,7 +74,7 @@ public class ZbierajActivity extends AppCompatActivity {
         context = (Context) this;
         gridlista = new ArrayList<Button>();
         setbutton(gridlista);
-        ;
+
         gridView.setAdapter(new GridAdapter(gridlista));
         pad = new Pad();
         arrayList = pad.padArrayList;

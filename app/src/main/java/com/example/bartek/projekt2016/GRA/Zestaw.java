@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
-
 import com.example.bartek.projekt2016.MainActivity;
 import com.example.bartek.projekt2016.R;
 
